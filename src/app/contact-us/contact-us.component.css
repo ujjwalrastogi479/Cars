@@ -47,3 +47,33 @@ button {
 button:hover {
     background-color: #cc5500;
 }
+ 
+.social-media {
+  display: flex;
+  align-items: center; /* ✅ Align icons and text in a straight line */
+  justify-content: center;
+  gap: 20px; /* ✅ Adds uniform space between elements */
+  margin-top: 20px;
+}
+
+.social-media h3 {
+  margin: 0; /* ✅ Removes extra space from heading */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.social-media a {
+  display: flex;
+  align-items: center; /* ✅ Ensures icons align properly */
+}
+
+.social-media img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-media img:hover {
+  transform: scale(1.2); /* ✅ Hover effect */
+}
+
