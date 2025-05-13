@@ -1,46 +1,55 @@
 .about-container {
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
   padding: 30px;
   font-family: 'Poppins', sans-serif;
-  line-height: 1.0;
+  line-height: 1.7;
 }
 
+/* Hero Section */
 .hero {
   text-align: center;
-  padding: 60px;
-  background: linear-gradient(to right, #007bff, #004085);
+  padding: 50px;
+  background: linear-gradient(to right, #ffb700, #004085);
   color: white;
+  border-radius: 12px;
 }
 
-.hero h1 {
-  font-size: 42px;
+/* Boxed Sections */
+.box {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 30px;
+  margin: 20px 0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styled Points */
+.point-box {
+  background: #e3eaf3;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+/* Headings */
+h2 {
+  color: #004085;
+  font-size: 26px;
   font-weight: bold;
 }
 
-.hero .tagline {
-  font-size: 20px;
+/* Testimonials */
+.testimonials p {
   font-style: italic;
+  font-size: 18px;
 }
 
-h2 {
-  margin-top: 40px;
-  color: #004085;
-}
-
-ul {
-  padding-left: 20px;
-}
-
-.testimonials {
-  font-style: italic;
-  margin-top: 30px;
-}
-
+/* Contact Section */
 .contact {
   text-align: center;
-  margin-top: 50px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .contact a {
