@@ -1,0 +1,29 @@
+<div class="about-container">
+  <header class="hero">
+    <h1>{{ companyName }}</h1>
+    <p class="tagline">Reliable, Affordable, & Hassle-Free Car Rentals</p>
+  </header>
+
+  <section class="content">
+    <h2>Our Mission</h2>
+    <p>{{ mission }}</p>
+
+    <h2>Our Vision</h2>
+    <p>{{ vision }}</p>
+
+    <h2>Why Choose Carzy?</h2>
+    <ul>
+      <li *ngFor="let point of whyChooseUs">{{ point }}</li>
+    </ul>
+
+    <h2>Customer Testimonials</h2>
+    <div class="testimonials">
+      <p *ngFor="let review of testimonials"><strong>{{ review.name }}</strong> - "{{ review.feedback }}"</p>
+    </div>
+  </section>
+
+  <footer class="contact">
+    <h2>Contact Us</h2>
+    <p>📧 <a href="mailto:support@carzy.com">support@carzy.com</a></p>
+  </footer>
+</div>
