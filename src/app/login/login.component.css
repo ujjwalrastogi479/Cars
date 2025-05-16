@@ -1,0 +1,117 @@
+/* Full-page background image */
+.login-page {
+  background-image: url('/assets/lam.jpg');
+  /* ✅ Add leading '/' to reference assets correctly */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f7f9;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: left;
+  /* Keeps alignment consistent */
+  margin-right: 1415px;
+  /* ✅ Increased margin to shift text right */
+  color: black;
+}
+
+/* Login Form */
+.form-container {
+  max-width: 400px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 50px rgba(0, 0, 0, 0.3);
+  position: relative;
+  left: -34%;
+  /* ✅ Moves the box slightly to the left */
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 90%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.captcha {
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  padding: 8px 12px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+span {
+  background-color: lightgray;
+  border: 1px solid black;
+  padding: 3px;
+  font-style: italic;
+}
+
+img {
+  width: 20px;
+  height: 20px;
+}
+
+button[type="button"] {
+  background: none;
+  border: none;
+}
