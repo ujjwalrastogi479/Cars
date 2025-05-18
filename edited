@@ -1,5 +1,11 @@
 //login pop-up
 
+if (response.user.role === 'admin') {
+          this.router.navigate(['/admin']); // Navigate to Admin Page
+        } else {
+          this.router.navigate(['/vehicletypes']); // Navigate to User Dashboard
+        }
+      },
 error: (error) => {
         this.isLoading = false; // Hide loading spinner
         if (error.status === 404) {
@@ -28,3 +34,57 @@ constructor(private router:Router){}
     this.showPopup = true;
     this.router.navigate(['/admin']);
   }
+
+
+//app.component.ts
+
+<ng-container *ngIf="isLoggedIn">
+                <!-- Show only Admin and Logout for Admin users -->
+                <ng-container *ngIf="userRole === 'admin'; else userBlock">
+                    <a routerLink="/admin">Admin</a>
+                    <a (click)="logout()" style="cursor:pointer;">Logout</a>
+                </ng-container>
+
+                <!-- Show all other options for normal users -->
+                <ng-template #userBlock>
+                    <a routerLink="/vehicletypes">Book a Ride</a>
+                    <a routerLink="/about-us">About Us</a>
+                    <a routerLink="/contact-us">Contact Us</a>
+                    <a routerLink="/profile">Profile</a>
+                    <a (click)="logout()" style="cursor:pointer;">Logout</a>
+                </ng-template>
+            </ng-container>
+
+            <!-- Show Login/Signup if not logged in -->
+            <ng-container *ngIf="!isLoggedIn">
+                <a routerLink="/login">Login</a>
+                <a routerLink="/signup">Sign Up</a>
+            </ng-container>
+
+
+//home.component.ts
+
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css']
+})
+export class HomeComponent {
+    isSignedIn: boolean = false; // Assume user is not signed in
+
+    constructor(private router: Router) {
+        // Check local storage for login state
+        this.isSignedIn = localStorage.getItem('isLoggedIn') === 'true';
+    }
+
+    bookCar() {
+        if (this.isSignedIn) {
+            this.router.navigate(['/vehicletypes']); // Navigate if logged in
+        } else {
+            alert('Login to book a car'); // Show pop-up if not logged in
+        }
+    }
+}
