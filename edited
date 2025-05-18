@@ -1,0 +1,30 @@
+//login pop-up
+
+error: (error) => {
+        this.isLoading = false; // Hide loading spinner
+        if (error.status === 404) {
+          this.loginError = 'User not found. Please check your email.';
+          alert('Email or password is incorrect. Please try again.');
+        } else if (error.status === 401) {
+          this.loginError = 'Invalid password. Please try again.';
+          alert('Email or password is incorrect. Please try again.');
+        } else {
+          this.loginError = 'An unexpected error occurred. Please try again later.';
+          alert('An unexpected error occurred. Please try again later.');
+        }
+      },
+
+
+//navigation to rental
+
+completeRide(rental)
+
+        this.router.navigate(['/payment']);
+
+//nanvigate to admin
+
+constructor(private router:Router){}
+  onPayNow() {
+    this.showPopup = true;
+    this.router.navigate(['/admin']);
+  }
